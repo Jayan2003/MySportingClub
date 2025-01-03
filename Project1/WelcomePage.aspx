@@ -16,11 +16,11 @@
 
         /* App Bar */
         .app-bar {
-            background-color: #2A3C4F; 
+            background-color: #003B5C; 
             color: white;
             text-align: center;
             padding: 15px 0;
-            font-size: 24px;
+            font-size: 40px;
             font-weight: bold;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
@@ -28,10 +28,24 @@
         /* Hero Section */
         .hero-section {
             background-color: #ffffff; 
-            padding: 40px 20px;
+            padding: 15px 20px;
             text-align: center;
             border-bottom: 2px solid #004d26; /* Dark green separator line */
+            display: flex;
+            align-items: center; /* Vertically center the content */
+            justify-content: center; /* Horizontally center the content */
+            flex-direction: column;
         }
+
+        .hero-section img {
+           width: 100px; /* Make the image larger */
+           height: 100px; /* Ensure it's square */
+           object-fit: cover; /* Maintain aspect ratio */
+           margin-bottom: 15px; /* Space between image and text */
+           border-radius: 50%; /* Make the image round */
+        }
+
+           
 
         .hero-section h1 {
             font-size: 32px;
@@ -43,6 +57,8 @@
             font-size: 18px;
             color: #666;
             margin-top: 10px;
+            width: 100%; /* Ensures it takes up the full width and forces it to the next line */
+            text-align: center; /* Center the paragraph text */
         }
 
         /* Container for Cards */
@@ -110,12 +126,13 @@
 </head>
 <body>
     <!-- App Bar -->
-    <div class="app-bar">Welcome to the Sporting Club</div>
+    <div class="app-bar">El7arefa Sporting Club</div>
 
     <!-- Hero Section -->
     <div class="hero-section">
+        <img src="images\image1.jpg" alt="Hero Image">
         <h1>Join Our Community</h1>
-        <p>Choose an option to get started.</p>
+        <p> Choose an option to get started.</p>
     </div>
 
     <!-- Container for Cards -->

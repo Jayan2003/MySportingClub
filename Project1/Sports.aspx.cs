@@ -16,6 +16,8 @@ namespace Project1
         protected void ShowDescription_Click(object sender, EventArgs e)
         {
             // Get the sport name from the button's CommandArgument
+            //sender: Refers to the object (in this case, the button) that triggered the ShowDescription_Click event.
+            //(Button): This is a type cast, converting sender (which is of type object) into a Button so that you can access its specific properties like CommandArgument.
             var button = (Button)sender;
             string sportName = button.CommandArgument;
 
@@ -25,18 +27,20 @@ namespace Project1
 
         private void FetchSportDetails(string sportName)
         {
+            // Connection string to connect to the MySQL database
             string connectionString = "server=localhost;database=mysportingclub;user=root;password=salma123";
 
             try
             {
+                // Using statement ensures the database connection is properly closed and disposed of after use
                 using (MySqlConnection connection = new MySqlConnection(connectionString))
                 {
-                    connection.Open();
+                    connection.Open(); // Open the connection to the MySQL database
 
                     // SQL query to fetch sport details
                     string query="SELECT sportName, description FROM mysportingclub.Sports WHERE sportName = @sportName";
-                    ;
 
+                    // Create a MySqlCommand object to execute the query
                     using (MySqlCommand command = new MySqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@sportName", sportName);
